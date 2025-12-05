@@ -2,10 +2,10 @@ import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-zinc-200 bg-white mt-12 lg:mt-16">
+    <footer className="w-full border-zinc-200 bg-white mt-8 sm:mt-12 lg:mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Navigation links */}
-        <nav className="mb-8 flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-zinc-600">
+        <nav className="mb-6 sm:mb-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-zinc-600">
           
           <a
             href="#about"
@@ -44,27 +44,26 @@ export default function Footer() {
         </nav>
 
         {/* Privacy Policy link */}
-        <div className="mb-12 flex justify-center">
+        <div className="mb-8 sm:mb-12 flex justify-center">
           <a
             href="#privacy"
-            className="text-sm font-medium text-zinc-500 transition hover:text-zinc-700"
+            className="text-xs sm:text-sm font-medium text-zinc-500 transition hover:text-zinc-700"
           >
             Privacy Policy
           </a>
         </div>
 
         {/* Large faded ReThing text */}
-        <div className="relative w-full overflow-hidden ">
+        <div className="relative w-full overflow-hidden">
           <h2 
             className="w-full text-center font-bold leading-none select-none"
             style={{
-              fontSize: 'clamp(80px, 15vw, 280px)',
+              fontSize: 'clamp(48px, 15vw, 280px)',
               color: '#f4f4f5',
               backgroundImage: 'repeating-linear-gradient(45deg, #f4f4f5, #f4f4f5 1px, #e4e4e7 4px, #e4e4e7 4px)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-
             }}
           >
             ReThing

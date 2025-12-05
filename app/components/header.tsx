@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,7 @@ export default function Header() {
         behavior: "smooth",
       });
     }
+    setIsMobileMenuOpen(false);
   };
 
   const navItems = [
@@ -41,7 +43,7 @@ export default function Header() {
         isScrolled ? "bg-white/90 backdrop-blur-sm" : ""
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center">
         <nav className="flex w-full items-center justify-between">
           {/* Logo/Brand */}
           <div className="flex-shrink-0 flex items-center">
@@ -50,7 +52,7 @@ export default function Header() {
               alt="ReThing"
               width={100}
               height={100}
-              className="w-12 h-12"
+              className="w-10 h-10 sm:w-12 sm:h-12"
             />
           </div>
 
@@ -80,24 +82,62 @@ export default function Header() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
-              className="text-zinc-700 hover:text-zinc-900"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-zinc-700 hover:text-zinc-900 p-2"
               aria-label="Menu"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isMobileMenuOpen ? (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </nav>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-zinc-100">
+          <div className="px-4 py-4 space-y-3">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left text-sm font-medium text-zinc-700 py-2 px-3 rounded-lg hover:bg-zinc-50 transition"
+              >
+                {item.label.replace(" /", "")}
+              </button>
+            ))}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="w-full mt-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800"
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

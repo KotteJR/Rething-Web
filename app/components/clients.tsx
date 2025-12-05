@@ -35,9 +35,9 @@ export default function clients() {
   }, [clients.length]);
 
   return (
-    <section id="about" className="w-full bg-white py-10 mt-4 md:mt-0 md:py-18">
-      <div className="text-center space-y-4">
-        <div className="inline-flex items-center justify-center bg-white px-4 py-1 text-[14px] font-medium tracking-[0.2em] uppercase text-zinc-500">
+    <section id="about" className="w-full bg-white py-6 sm:py-10 mt-4 md:mt-0 md:py-18">
+      <div className="text-center space-y-3 sm:space-y-4 px-4 sm:px-0">
+        <div className="inline-flex items-center justify-center bg-white px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500">
           The wide range of clients we work with /
         </div>
         <Carousel />
