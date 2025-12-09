@@ -7,7 +7,7 @@ const services = [
     description:
       "Transform your business processes with state-of-the-art digital strategies tailored for success.",
     badge: "Digital Transformation",
-    image: "/images/hero.png",
+    image: "/images/1.png",
     icon: HiOutlineRocketLaunch,
   },
   {
@@ -15,7 +15,7 @@ const services = [
     description:
       "Receive expert guidance to enhance your technological capabilities and streamline operations.",
     badge: "IT Consulting",
-    image: "/images/hero.png",
+    image: "/images/3.png",
     icon: HiOutlineBriefcase,
   },
   {
@@ -31,7 +31,7 @@ const services = [
     description:
       "Scalable cloud infrastructure and services to support your business growth and digital operations.",
     badge: "Cloud Solutions",
-    image: "/images/hero.png",
+    image: "/images/5.png",
     icon: HiOutlineCloud,
   },
 ];

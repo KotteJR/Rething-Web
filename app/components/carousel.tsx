@@ -118,12 +118,12 @@ export default function TrustedClientsSection({ gap = "normal" }: CarouselProps)
   }, [clients.length, gap]);
 
   return (
-    <section className="w-full bg-white py-4">
+    <section className="w-full bg-transparent py-4">
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 flex flex-col items-center">
         <div className="relative w-full max-w-4xl overflow-hidden">
-          {/* Blurred sides with white overlay */}
-          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          {/* Blurred sides - transparent for contact section compatibility */}
+          <div className="absolute left-0 top-0 w-12 h-full bg-gradient-to-r from-white/60 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-white/60 to-transparent z-10 pointer-events-none"></div>
           
           {/* Scrolling carousel */}
           <div 

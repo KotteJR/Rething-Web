@@ -16,35 +16,35 @@ const features = [
     description:
       "We collaborate with you to define clear, actionable requirements. Through detailed workshops and discussions, we ensure every aspect of your vision is captured and aligned with your business goals.",
     icon: HiOutlineDocumentText,
-    image: "/images/hero.png", // Placeholder path
+    image: "/images/2.png", // Placeholder path
   },
   {
     title: "Solution Design",
     description:
       "With insights from the discovery phase, we design an innovative solution that balances functionality, aesthetics, and cutting-edge technology. Every decision is backed by data, trends, and best practices, ensuring the solution is future-proof and scalable.",
     icon: HiOutlineLightBulb,
-    image: "/images/hero.png", // Placeholder path
+    image: "/images/3.png", // Placeholder path
   },
   {
     title: "Development & Testing",
     description:
       "Our team of experts brings the design to life, building a robust and high-performing solution. We rigorously test every feature and function to ensure it meets the highest quality standards before it's ready for launch.",
     icon: HiOutlineCodeBracket,
-    image: "/images/hero.png", // Placeholder path
+    image: "/images/5.png", // Placeholder path
   },
   {
     title: "Deployment & Launch",
     description:
       "We seamlessly deploy your solution, ensuring minimal disruption to your operations. From initial setup to final handover, we prioritize a smooth and successful launch, making sure you're ready to impress from day one.",
     icon: HiOutlineRocketLaunch,
-    image: "/images/hero.png", // Placeholder path
+    image: "/images/6.png", // Placeholder path
   },
   {
     title: "Growth & Scaling",
     description:
       "Once live, we stay by your side. Whether it's scaling your solution, optimizing its performance, or expanding its features, we help your business adapt and thrive as it grows.",
     icon: HiOutlineChartBar,
-    image: "/images/hero.png", // Placeholder path
+    image: "/images/1.png", // Placeholder path
   },
 ];
 

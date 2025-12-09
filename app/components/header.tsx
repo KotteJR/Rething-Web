@@ -119,7 +119,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-zinc-100">
-          <div className="px-4 py-4 space-y-3">
+          <div className="px-4 sm:px-6 lg:px-8 py-4 space-y-3">
             {navItems.map((item) => (
               <button
                 key={item.id}

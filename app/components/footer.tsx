@@ -14,13 +14,13 @@ export default function Footer() {
             About Us
           </a>
           <a
-            href="#pricing"
+            href="/pricing"
             className="transition hover:text-zinc-600"
           >
             Pricing
           </a>
           <a
-            href="#faq"
+            href="/faq"
             className="transition hover:text-zinc-600"
           >
             FAQ
@@ -33,7 +33,7 @@ export default function Footer() {
           </a>
          
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/rethingse/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 transition hover:text-zinc-600"

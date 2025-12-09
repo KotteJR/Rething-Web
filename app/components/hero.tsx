@@ -1,6 +1,39 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Hero() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "hero", email }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setEmail("");
+        setTimeout(() => setSubmitStatus("idle"), 3000);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="hero" className="min-h-screen md:max-h-screen">
       {/* Mobile Layout - Image as background */}
@@ -29,20 +62,30 @@ export default function Hero() {
             </p>
           </div>
 
-          <form className="mt-6 flex flex-row gap-2 sm:gap-3">
+          <form onSubmit={handleSubmit} className="mt-6 flex flex-row gap-2 sm:gap-3">
             <input
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="flex-1 min-w-0 rounded-full border border-zinc-300 bg-white/90 backdrop-blur-sm px-4 sm:px-5 py-3 sm:py-3.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2"
               required
+              disabled={isSubmitting}
             />
             <button
               type="submit"
-              className="rounded-full bg-zinc-900 px-4 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-medium text-white shadow-lg transition hover:bg-zinc-800 whitespace-nowrap flex-shrink-0"
+              disabled={isSubmitting}
+              className="rounded-full bg-zinc-900 px-4 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-medium text-white shadow-lg transition hover:bg-zinc-800 whitespace-nowrap flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Get in touch!
+              {isSubmitting ? "Sending..." : submitStatus === "success" ? "Sent!" : "Get in touch!"}
             </button>
           </form>
+          {submitStatus === "success" && (
+            <p className="mt-2 text-sm text-green-600">Thank you! We&apos;ll be in touch soon.</p>
+          )}
+          {submitStatus === "error" && (
+            <p className="mt-2 text-sm text-red-600">Something went wrong. Please try again.</p>
+          )}
         </div>
       </div>
 
@@ -60,20 +103,30 @@ export default function Hero() {
             </p>
           </div>
 
-          <form className="flex flex-wrap items-center gap-3 max-w-md">
+          <form onSubmit={handleSubmit} className="flex flex-wrap items-center gap-3 max-w-md">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 min-w-[180px] rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 min-w-[180px] rounded-full border border-zinc-300 bg-white px-6 py-3.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 disabled:opacity-50"
               required
+              disabled={isSubmitting}
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-7 py-3.5 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 whitespace-nowrap"
+              disabled={isSubmitting}
+              className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-7 py-3.5 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Get in touch!
+              {isSubmitting ? "Sending..." : submitStatus === "success" ? "Sent!" : "Get in touch!"}
             </button>
           </form>
+          {submitStatus === "success" && (
+            <p className="text-sm text-green-600">Thank you! We&apos;ll be in touch soon.</p>
+          )}
+          {submitStatus === "error" && (
+            <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+          )}
         </div>
 
         {/* Right column */}
