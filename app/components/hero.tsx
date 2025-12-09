@@ -68,7 +68,7 @@ export default function Hero() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 min-w-0 rounded-full border border-zinc-300 bg-white/90 backdrop-blur-sm px-4 sm:px-5 py-3 sm:py-3.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2"
+              className="flex-1 min-w-0 rounded-full border border-zinc-300 bg-white/80 backdrop-blur-sm px-4 sm:px-5 py-3 sm:py-3.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2"
               required
               disabled={isSubmitting}
             />
