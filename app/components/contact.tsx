@@ -58,7 +58,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8">
-      <div className="grid gap-4 sm:gap-12 lg:gap-16 lg:grid-cols-2 lg:items-start">
+      <div className="grid gap-4 sm:gap-12 lg:gap-16 md:grid-cols-2 lg:items-start">
         {/* Left column */}
         <div className="relative space-y-6 sm:space-y-10 rounded-[20px] sm:rounded-[32px] overflow-hidden px-0 py-6 sm:px-0 sm:py-8 lg:px-0 lg:py-10">
           {/* Background image with blur and white overlay - hidden below 1100px */}
