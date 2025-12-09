@@ -157,7 +157,7 @@ export default function Hero() {
                 display: 'inline-block',
               }}
             >
-              87
+              30
             </p>
             <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Clients Served</p>
           </div>
@@ -173,7 +173,7 @@ export default function Hero() {
                 display: 'inline-block',
               }}
             >
-              200+
+              50+
             </p>
             <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Projects</p>
           </div>
@@ -191,7 +191,7 @@ export default function Hero() {
             >
               100%
             </p>
-            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Happy Clients</p>
+            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Clients Satisfaction</p>
           </div>
         </div>
       </div>
