@@ -55,9 +55,9 @@ export default function Hero() {
         <div className="relative z-10 px-5 pb-8 pt-24">
           <div className="space-y-5">
             <h1 className="text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-zinc-900">
-              We build custom software and scalable solutions
+              We build custom software and scalable solutions.
             </h1>
-            <p className="text-sm sm:text-base leading-relaxed text-zinc-600 max-w-lg">
+            <p className="text-sm sm:text-base leading-relaxed text-zinc-500 max-w-lg">
               We build solutions that augment your teams, digitize your business processes, and bring your organization into the future.
             </p>
           </div>
