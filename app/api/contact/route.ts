@@ -49,13 +49,28 @@ export async function POST(request: NextRequest) {
     }
 
     // Send via Web3Forms API
+    console.log("Sending to Web3Forms with key:", WEB3FORMS_ACCESS_KEY?.substring(0, 8) + "...");
+    
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
       body: JSON.stringify(formData),
     });
 
-    const result = await response.json();
+    const responseText = await response.text();
+    console.log("Web3Forms response status:", response.status);
+    console.log("Web3Forms response:", responseText);
+    
+    let result;
+    try {
+      result = JSON.parse(responseText);
+    } catch {
+      console.error("Failed to parse Web3Forms response as JSON");
+      throw new Error("Invalid response from Web3Forms");
+    }
 
     if (result.success) {
       return NextResponse.json(

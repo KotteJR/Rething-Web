@@ -69,9 +69,9 @@ export default function TrustedClientsSection({ gap = "normal" }: CarouselProps)
         setWidth = calculateSetWidth();
       };
       window.addEventListener('resize', handleResize);
-      
-      const animate = () => {
-        setScrollPosition((prev) => {
+    
+    const animate = () => {
+      setScrollPosition((prev) => {
           // Recalculate if needed (in case of resize)
           const currentSetWidth = calculateSetWidth();
           if (currentSetWidth > 0) {
@@ -92,9 +92,9 @@ export default function TrustedClientsSection({ gap = "normal" }: CarouselProps)
           }
           
           return newPosition;
-        });
+      });
         animationRef.current = requestAnimationFrame(animate);
-      };
+    };
 
       animationRef.current = requestAnimationFrame(animate);
       
