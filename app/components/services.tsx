@@ -1,38 +1,38 @@
 import Image from "next/image";
-import { HiOutlineRocketLaunch, HiOutlineBriefcase, HiOutlineCog6Tooth, HiOutlineCloud } from "react-icons/hi2";
+import { HiOutlineShieldCheck, HiOutlineCog6Tooth, HiOutlineAcademicCap, HiOutlineChartBarSquare } from "react-icons/hi2";
 
 const services = [
   {
-    title: "Digital Transformation",
+    title: "Governed AI",
     description:
-      "Transform your business processes with state-of-the-art digital strategies tailored for success.",
-    badge: "Digital Transformation",
+      "Deploy AI with built-in compliance, guardrails, and policy enforcement. Ensure your AI operates within your rules and regulatory requirements.",
+    badge: "Governed AI",
     image: "/images/1.png",
-    icon: HiOutlineRocketLaunch,
+    icon: HiOutlineShieldCheck,
   },
   {
-    title: "IT Consulting",
+    title: "Custom AI Models",
     description:
-      "Receive expert guidance to enhance your technological capabilities and streamline operations.",
-    badge: "IT Consulting",
+      "Purpose-built models trained on your data and fine-tuned for your specific use cases. From pre-training to production deployment.",
+    badge: "Custom Models",
     image: "/images/3.png",
-    icon: HiOutlineBriefcase,
-  },
-  {
-    title: "Custom Solutions",
-    description:
-      "Tailored solutions designed to meet your specific challenges and goals, ensuring success.",
-    badge: "Custom Solutions",
-    image: "/images/hero.png",
     icon: HiOutlineCog6Tooth,
   },
   {
-    title: "Cloud Solutions",
+    title: "Pre & Post Training",
     description:
-      "Scalable cloud infrastructure and services to support your business growth and digital operations.",
-    badge: "Cloud Solutions",
+      "Comprehensive model development lifecycle—from data preparation and pre-training to fine-tuning and continuous improvement.",
+    badge: "Model Training",
+    image: "/images/hero.png",
+    icon: HiOutlineAcademicCap,
+  },
+  {
+    title: "AI Guardrails",
+    description:
+      "Implement safety controls, bias detection, and content filtering. Ensure your AI behaves responsibly and meets enterprise standards.",
+    badge: "AI Guardrails",
     image: "/images/5.png",
-    icon: HiOutlineCloud,
+    icon: HiOutlineChartBarSquare,
   },
 ];
 
@@ -42,11 +42,10 @@ export default function Services() {
       {/* Header */}
       <div className="mb-8 sm:mb-14 text-center lg:mb-16">
         <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900 mb-3 sm:mb-4">
-          Our services
+          Enterprise AI Solutions
         </h2>
         <p className="mb-4 text-sm sm:text-md max-w-2xl mx-auto font-medium text-zinc-500 px-2">
-          With our wide range of services, we ensure your software development
-          needs are met with high-quality solutions.
+          Comprehensive AI services designed for enterprises that require governance, compliance, and custom solutions tailored to their unique needs.
         </p>
       </div>
 

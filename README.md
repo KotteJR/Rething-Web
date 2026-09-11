@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rething - Enterprise AI Solutions
+
+AI that works by your rules. Governed enterprise AI with custom models, guardrails, and compliance built in.
+
+This is a [Next.js](https://nextjs.org) project showcasing our enterprise AI capabilities.
 
 ## Getting Started
 

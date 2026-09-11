@@ -12,39 +12,39 @@ import {
 
 const features = [
   {
-    title: "Requirement Analysis",
+    title: "Discovery & Compliance",
     description:
-      "We collaborate with you to define clear, actionable requirements. Through detailed workshops and discussions, we ensure every aspect of your vision is captured and aligned with your business goals.",
+      "We assess your use case, data landscape, and regulatory requirements. Define governance policies, compliance needs, and guardrails before any model development begins.",
     icon: HiOutlineDocumentText,
-    image: "/images/2.png", // Placeholder path
+    image: "/images/2.png",
   },
   {
-    title: "Solution Design",
+    title: "Data & Architecture",
     description:
-      "With insights from the discovery phase, we design an innovative solution that balances functionality, aesthetics, and cutting-edge technology. Every decision is backed by data, trends, and best practices, ensuring the solution is future-proof and scalable.",
+      "Design secure data pipelines and AI architecture aligned with your enterprise policies. Implement privacy controls, access management, and audit trails from the ground up.",
     icon: HiOutlineLightBulb,
-    image: "/images/3.png", // Placeholder path
+    image: "/images/3.png",
   },
   {
-    title: "Development & Testing",
+    title: "Model Development",
     description:
-      "Our team of experts brings the design to life, building a robust and high-performing solution. We rigorously test every feature and function to ensure it meets the highest quality standards before it's ready for launch.",
+      "Build custom models through pre-training or fine-tuning. Integrate guardrails, bias detection, and safety controls throughout the development lifecycle to ensure responsible AI.",
     icon: HiOutlineCodeBracket,
-    image: "/images/5.png", // Placeholder path
+    image: "/images/5.png",
   },
   {
-    title: "Deployment & Launch",
+    title: "Testing & Validation",
     description:
-      "We seamlessly deploy your solution, ensuring minimal disruption to your operations. From initial setup to final handover, we prioritize a smooth and successful launch, making sure you're ready to impress from day one.",
+      "Rigorous testing against your compliance requirements, performance benchmarks, and safety standards. Validate that guardrails work as intended before deployment.",
     icon: HiOutlineRocketLaunch,
-    image: "/images/6.png", // Placeholder path
+    image: "/images/6.png",
   },
   {
-    title: "Growth & Scaling",
+    title: "Deploy & Monitor",
     description:
-      "Once live, we stay by your side. Whether it's scaling your solution, optimizing its performance, or expanding its features, we help your business adapt and thrive as it grows.",
+      "Deploy AI systems with continuous monitoring, drift detection, and policy enforcement. Maintain compliance and performance as your AI scales across the enterprise.",
     icon: HiOutlineChartBar,
-    image: "/images/1.png", // Placeholder path
+    image: "/images/1.png",
   },
 ];
 
@@ -57,10 +57,10 @@ export default function Features() {
       {/* Header */}
       <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12 lg:mb-16">
         <div className="inline-flex items-center justify-center bg-white px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500">
-          our process /
+          our methodology /
         </div>
         <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900">
-          Discover how we work
+          Governed AI Development
         </h2>
       </div>
 
