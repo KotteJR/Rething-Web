@@ -4,9 +4,9 @@ import Clients from "./components/clients";
 import WhyGoverned from "./components/why-governed";
 import Services from "./components/services";
 import Features from "./components/features";
-import Guardrails from "./components/guardrails";
-import CustomModels from "./components/custom-models";
-import Compliance from "./components/compliance";
+import UseCases from "./components/use-cases";
+import Environment from "./components/environment";
+import DecisionRooms from "./components/decision-rooms";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 
@@ -20,9 +20,9 @@ export default function Home() {
         <WhyGoverned />
         <Services />
         <Features />
-        <Guardrails />
-        <CustomModels />
-        <Compliance />
+        <UseCases />
+        <Environment />
+        <DecisionRooms />
         <Contact />
         <Footer />
       </main>
