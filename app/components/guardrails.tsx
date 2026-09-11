@@ -1,103 +1,93 @@
-"use client";
-
-import { HiOutlineShieldCheck, HiOutlineExclamationTriangle, HiOutlineScale, HiOutlineDocumentCheck } from "react-icons/hi2";
+import Image from "next/image";
+import {
+  HiOutlineShieldCheck,
+  HiOutlineScale,
+  HiOutlineExclamationTriangle,
+  HiOutlineDocumentCheck,
+} from "react-icons/hi2";
 
 const guardrails = [
   {
-    title: "Content Filtering",
-    description: "Automatic detection and filtering of harmful, inappropriate, or non-compliant content before it reaches users.",
+    title: "Content filtering",
+    description:
+      "Detect and filter sensitive, harmful, or non-compliant output before it reaches users.",
+    badge: "Content filtering",
+    image: "/images/1.png",
     icon: HiOutlineShieldCheck,
-    features: ["PII Detection", "Toxicity Filtering", "Custom Rules"],
   },
   {
-    title: "Bias Detection",
-    description: "Continuous monitoring and mitigation of bias in model outputs to ensure fair and ethical AI decisions.",
+    title: "Bias detection",
+    description:
+      "Monitor fairness signals and intervene when model behavior drifts from your standards.",
+    badge: "Bias detection",
+    image: "/images/6.png",
     icon: HiOutlineScale,
-    features: ["Fairness Metrics", "Bias Alerts", "Demographic Parity"],
   },
   {
-    title: "Risk Management",
-    description: "Real-time risk assessment and intervention to prevent harmful outputs and maintain safety standards.",
+    title: "Risk controls",
+    description:
+      "Score, block, or escalate high-risk responses with rules that match your policy.",
+    badge: "Risk controls",
+    image: "/images/2.png",
     icon: HiOutlineExclamationTriangle,
-    features: ["Risk Scoring", "Auto-Blocking", "Escalation Protocols"],
   },
   {
-    title: "Compliance Enforcement",
-    description: "Automated policy enforcement aligned with industry regulations like GDPR, HIPAA, and SOC 2.",
+    title: "Policy enforcement",
+    description:
+      "Keep every model inside your operational, legal, and industry requirements.",
+    badge: "Policy enforcement",
+    image: "/images/5.png",
     icon: HiOutlineDocumentCheck,
-    features: ["Policy Engine", "Audit Trails", "Regulatory Alignment"],
   },
 ];
 
 export default function Guardrails() {
   return (
-    <section id="guardrails" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-zinc-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
-          <div className="inline-flex items-center justify-center bg-white px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500 rounded-full border border-zinc-200">
-            AI SAFETY /
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900">
-            Built-in Guardrails
-          </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-zinc-600 max-w-2xl mx-auto">
-            Enterprise-grade safety controls and compliance mechanisms that protect your business and users at every step.
-          </p>
+    <section id="guardrails" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="mb-8 sm:mb-14 text-center lg:mb-16">
+        <div className="inline-flex items-center justify-center bg-white px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500">
+          ai safety /
         </div>
+        <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900 mt-3 sm:mt-4 mb-3 sm:mb-4">
+          Built-in guardrails
+        </h2>
+        <p className="mb-4 text-sm sm:text-md max-w-2xl mx-auto font-medium text-zinc-500 px-2">
+          Safety, policy, and compliance live in the model path—not as a layer you add later.
+        </p>
+      </div>
 
-        {/* Guardrails Grid */}
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {guardrails.map((guardrail) => {
-            const IconComponent = guardrail.icon;
-            return (
-              <div
-                key={guardrail.title}
-                className="bg-white rounded-2xl lg:rounded-3xl border border-zinc-200 p-6 sm:p-8 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 text-white">
-                    <IconComponent className="h-6 w-6" />
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 lg:grid-cols-4">
+        {guardrails.map((guardrail) => {
+          const IconComponent = guardrail.icon;
+          return (
+            <article key={guardrail.title} className="flex flex-col">
+              <div className="relative mb-3 sm:mb-5 overflow-hidden rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] bg-zinc-50 border border-zinc-200 shadow-sm aspect-[4/5]">
+                <Image
+                  src={guardrail.image}
+                  alt={guardrail.title}
+                  fill
+                  className="object-contain p-4 sm:p-6 rounded-[16px] sm:rounded-[24px] lg:rounded-[32px]"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                />
+
+                <div className="pointer-events-none absolute inset-x-0 bottom-3 sm:bottom-6 flex justify-center z-10">
+                  <div className="inline-flex items-center gap-1 sm:gap-2 rounded-full bg-black/90 px-2 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs font-medium text-white">
+                    <span className="flex h-4 w-4 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-white/10">
+                      <IconComponent className="h-2.5 w-2.5 sm:h-4 sm:w-4" />
+                    </span>
+                    <span className="truncate max-w-[80px] sm:max-w-none">{guardrail.badge}</span>
                   </div>
                 </div>
-                
-                <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 mb-2">
-                  {guardrail.title}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-zinc-600 mb-4 leading-relaxed">
+              </div>
+
+              <div className="space-y-1 sm:space-y-2 mx-1 sm:mx-2">
+                <p className="text-xs sm:text-sm lg:text-md text-center text-zinc-600 line-clamp-3 sm:line-clamp-none">
                   {guardrail.description}
                 </p>
-
-                <div className="space-y-2">
-                  {guardrail.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500">
-                      <div className="h-1.5 w-1.5 rounded-full bg-zinc-900"></div>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-12 sm:mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-white rounded-2xl border border-zinc-200 px-6 sm:px-8 py-6">
-            <div className="text-center sm:text-left">
-              <p className="text-sm sm:text-base font-semibold text-zinc-900">
-                Need custom guardrails for your use case?
-              </p>
-              <p className="text-xs sm:text-sm text-zinc-600">
-                We build tailored safety controls for your specific requirements.
-              </p>
-            </div>
-            <button className="rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 whitespace-nowrap">
-              Learn More
-            </button>
-          </div>
-        </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

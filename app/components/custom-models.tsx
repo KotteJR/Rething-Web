@@ -2,173 +2,100 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { HiOutlineBeaker, HiOutlineCog6Tooth, HiOutlineChartBar, HiOutlineRocketLaunch } from "react-icons/hi2";
+import {
+  HiOutlineBeaker,
+  HiOutlineCog6Tooth,
+  HiOutlineChartBar,
+} from "react-icons/hi2";
 
-const modelTypes = [
+const models = [
   {
-    title: "Foundation Models",
-    description: "Start with pre-trained foundation models and fine-tune them for your specific domain and use cases.",
+    title: "Foundation models",
+    description:
+      "Start from proven base models and fine-tune them on your domain, workflows, and language. Faster to deploy, still aligned with your rules.",
     icon: HiOutlineBeaker,
-    capabilities: [
-      "Domain-specific fine-tuning",
-      "Transfer learning",
-      "Multi-modal capabilities",
-      "Rapid deployment"
-    ],
-    useCases: ["Customer Service", "Document Analysis", "Content Generation"],
+    image: "/images/3.png",
   },
   {
-    title: "Custom Pre-trained",
-    description: "Build models from scratch, pre-trained on your proprietary data with complete control over architecture.",
+    title: "Custom pre-training",
+    description:
+      "Train models on your proprietary data when the domain is too specific for a general model. You keep the architecture, weights, and IP.",
     icon: HiOutlineCog6Tooth,
-    capabilities: [
-      "Proprietary data training",
-      "Custom architecture",
-      "Full IP ownership",
-      "Optimized for your domain"
-    ],
-    useCases: ["Specialized Industry", "Proprietary Knowledge", "Unique Requirements"],
+    image: "/images/hero.png",
   },
   {
-    title: "Hybrid Approach",
-    description: "Combine the best of both worlds—foundation models enhanced with your specialized training data.",
+    title: "Hybrid training",
+    description:
+      "Combine a foundation model with targeted pre-training and post-training so you get speed, fit, and continuous improvement.",
     icon: HiOutlineChartBar,
-    capabilities: [
-      "Best-in-class performance",
-      "Cost-effective",
-      "Faster time to market",
-      "Continuous improvement"
-    ],
-    useCases: ["Enterprise Scale", "Multi-department", "Complex Workflows"],
+    image: "/images/4.png",
   },
 ];
 
 export default function CustomModels() {
-  const [selectedModel, setSelectedModel] = useState(0);
-  const currentModel = modelTypes[selectedModel];
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectedModel = models[selectedIndex];
 
   return (
-    <section id="custom-models" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
-          <div className="inline-flex items-center justify-center bg-zinc-50 px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500 rounded-full border border-zinc-200">
-            CUSTOM MODELS /
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900">
-            Models Built for Your Business
-          </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-zinc-600 max-w-2xl mx-auto">
-            From fine-tuning to pre-training from scratch, we build AI models that understand your business and domain.
-          </p>
+    <section id="custom-models" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12 lg:mb-16">
+        <div className="inline-flex items-center justify-center bg-white px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500">
+          custom models /
         </div>
+        <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900">
+          Models built for your business
+        </h2>
+        <p className="text-sm sm:text-md max-w-2xl mx-auto font-medium text-zinc-500 px-2">
+          From fine-tuning to pre-training and post-training, we build models that understand your domain and stay inside your guardrails.
+        </p>
+      </div>
 
-        {/* Model Type Selector */}
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12">
-          {modelTypes.map((model, index) => {
+      <div className="grid gap-6 sm:gap-8 lg:gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.6fr)] lg:items-stretch">
+        <div className="space-y-2 sm:space-y-4">
+          {models.map((model, index) => {
             const IconComponent = model.icon;
+            const isSelected = index === selectedIndex;
             return (
               <button
                 key={model.title}
-                onClick={() => setSelectedModel(index)}
-                className={`flex items-center gap-3 px-6 py-4 rounded-xl border-2 transition-all ${
-                  selectedModel === index
-                    ? "border-zinc-900 bg-zinc-50 shadow-sm"
-                    : "border-zinc-200 bg-white hover:border-zinc-300"
+                onClick={() => setSelectedIndex(index)}
+                className={`flex w-full items-start gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border px-3 sm:px-5 py-3 sm:py-4 text-left transition ${
+                  isSelected
+                    ? "border-zinc-200 bg-zinc-50 shadow-xs"
+                    : "border-transparent bg-transparent hover:bg-zinc-50"
                 }`}
               >
-                <IconComponent className={`h-6 w-6 ${selectedModel === index ? "text-zinc-900" : "text-zinc-500"}`} />
-                <span className={`text-sm font-semibold ${selectedModel === index ? "text-zinc-900" : "text-zinc-600"}`}>
-                  {model.title}
+                <span
+                  className={`mt-0.5 sm:mt-1 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl transition-all duration-200 flex-shrink-0 ${
+                    isSelected
+                      ? "bg-zinc-900 text-white"
+                      : "bg-zinc-100 text-zinc-500"
+                  }`}
+                >
+                  <IconComponent className="h-4 w-4 sm:h-5 sm:w-5" />
+                </span>
+                <span className="space-y-0.5 sm:space-y-1 flex-1 min-w-0">
+                  <span className="block text-xs sm:text-sm font-semibold text-zinc-900">
+                    {model.title}
+                  </span>
+                  <span className="block text-[11px] sm:text-xs lg:text-sm leading-relaxed text-zinc-500">
+                    {model.description}
+                  </span>
                 </span>
               </button>
             );
           })}
         </div>
 
-        {/* Selected Model Details */}
-        <div className="bg-zinc-50 rounded-2xl lg:rounded-3xl border border-zinc-200 p-6 sm:p-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left: Details */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-semibold text-zinc-900 mb-3">
-                  {currentModel.title}
-                </h3>
-                <p className="text-base sm:text-lg text-zinc-600 leading-relaxed">
-                  {currentModel.description}
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-sm font-semibold text-zinc-500 uppercase tracking-wider mb-3">
-                  Key Capabilities
-                </h4>
-                <div className="space-y-2">
-                  {currentModel.capabilities.map((capability) => (
-                    <div key={capability} className="flex items-center gap-3">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900">
-                        <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-sm sm:text-base text-zinc-700">{capability}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-sm font-semibold text-zinc-500 uppercase tracking-wider mb-3">
-                  Ideal Use Cases
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {currentModel.useCases.map((useCase) => (
-                    <span
-                      key={useCase}
-                      className="inline-flex items-center px-3 py-1.5 rounded-full bg-white border border-zinc-200 text-xs sm:text-sm text-zinc-700"
-                    >
-                      {useCase}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Visual */}
-            <div className="flex items-center justify-center">
-              <div className="relative w-full aspect-square max-w-md rounded-2xl bg-gradient-to-br from-zinc-100 to-zinc-200 border border-zinc-300 flex items-center justify-center">
-                <HiOutlineRocketLaunch className="h-32 w-32 text-zinc-400" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-zinc-900/5 to-transparent rounded-2xl"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Process Overview */}
-        <div className="mt-12 sm:mt-16">
-          <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 text-center mb-8">
-            Our Model Development Process
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { step: "1", title: "Data Preparation", desc: "Clean, label, and prepare your training data" },
-              { step: "2", title: "Pre-training", desc: "Train base models on your domain data" },
-              { step: "3", title: "Fine-tuning", desc: "Optimize for specific tasks and use cases" },
-              { step: "4", title: "Deployment", desc: "Deploy with guardrails and monitoring" },
-            ].map((phase) => (
-              <div key={phase.step} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 text-white font-bold text-lg mb-3">
-                  {phase.step}
-                </div>
-                <h4 className="text-base sm:text-lg font-semibold text-zinc-900 mb-1">
-                  {phase.title}
-                </h4>
-                <p className="text-sm text-zinc-600">
-                  {phase.desc}
-                </p>
-              </div>
-            ))}
+        <div className="flex justify-center h-full order-first lg:order-last">
+          <div className="relative w-full max-w-xl h-full min-h-[200px] sm:min-h-[300px] lg:min-h-[360px] rounded-[20px] sm:rounded-[32px] border border-zinc-200 bg-zinc-50 overflow-hidden">
+            <Image
+              src={selectedModel.image}
+              alt={selectedModel.title}
+              fill
+              className="object-contain p-6 sm:p-10 rounded-[20px] sm:rounded-[32px]"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+            />
           </div>
         </div>
       </div>

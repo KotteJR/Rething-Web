@@ -1,121 +1,108 @@
-"use client";
+import Image from "next/image";
+import {
+  HiOutlineLockClosed,
+  HiOutlineDocumentText,
+  HiOutlineCheckBadge,
+  HiOutlineGlobeAlt,
+} from "react-icons/hi2";
 
-import { HiOutlineCheckBadge, HiOutlineLockClosed, HiOutlineDocumentText, HiOutlineGlobeAlt } from "react-icons/hi2";
-
-const complianceFeatures = [
+const features = [
   {
-    title: "Data Privacy",
-    description: "End-to-end encryption, data residency controls, and privacy-first architecture.",
+    title: "Data privacy",
+    description: "Encryption, residency controls, and access policies from the first pipeline.",
     icon: HiOutlineLockClosed,
   },
   {
-    title: "Audit Logging",
-    description: "Complete audit trails for every AI decision, query, and model interaction.",
+    title: "Audit logging",
+    description: "A complete trail for every query, decision, and model change.",
     icon: HiOutlineDocumentText,
   },
   {
-    title: "Regulatory Compliance",
-    description: "Built to meet GDPR, HIPAA, SOC 2, ISO 27001, and industry-specific standards.",
+    title: "Regulatory readiness",
+    description: "Designed for GDPR, HIPAA, SOC 2, ISO 27001, and industry rules.",
     icon: HiOutlineCheckBadge,
   },
   {
-    title: "Data Governance",
-    description: "Granular access controls, data lineage tracking, and policy management.",
+    title: "Data governance",
+    description: "Lineage, permissions, and policy management across the AI stack.",
     icon: HiOutlineGlobeAlt,
   },
 ];
 
 const certifications = [
-  { name: "GDPR", tag: "Compliant" },
-  { name: "SOC 2", tag: "Type II" },
-  { name: "ISO 27001", tag: "Certified" },
-  { name: "HIPAA", tag: "Ready" },
-  { name: "CCPA", tag: "Compliant" },
-  { name: "PCI DSS", tag: "Level 1" },
+  "GDPR",
+  "SOC 2",
+  "ISO 27001",
+  "HIPAA",
+  "CCPA",
+  "PCI DSS",
 ];
 
 export default function Compliance() {
   return (
-    <section id="compliance" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
-          <div className="inline-flex items-center justify-center bg-zinc-50 px-3 sm:px-4 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500 rounded-full border border-zinc-200">
-            SECURITY & COMPLIANCE /
+    <section id="compliance" className="py-12 sm:py-16 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div className="grid gap-8 lg:gap-16 md:grid-cols-2 lg:items-center">
+        <div className="relative order-first md:order-last">
+          <div className="relative w-full aspect-square max-w-xl mx-auto rounded-[20px] sm:rounded-[32px] border border-zinc-200 bg-zinc-50 overflow-hidden">
+            <Image
+              src="/images/7.png"
+              alt="Abstract compliance visual"
+              fill
+              className="object-contain p-6 sm:p-10"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900">
-            Enterprise-Grade Security
-          </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-zinc-600 max-w-2xl mx-auto">
-            Built from the ground up with security, privacy, and regulatory compliance at the core.
-          </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12 sm:mb-16">
-          {complianceFeatures.map((feature) => {
-            const IconComponent = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="text-center group"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-50 border border-zinc-200 text-zinc-900 group-hover:bg-zinc-900 group-hover:text-white transition-colors">
-                    <IconComponent className="h-8 w-8" />
-                  </div>
-                </div>
-                
-                <h3 className="text-base sm:text-lg font-semibold text-zinc-900 mb-2">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-sm text-zinc-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Certifications */}
-        <div className="bg-zinc-50 rounded-2xl lg:rounded-3xl border border-zinc-200 p-6 sm:p-10">
-          <div className="text-center mb-6 sm:mb-8">
-            <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 mb-2">
-              Compliance & Certifications
-            </h3>
-            <p className="text-sm sm:text-base text-zinc-600">
-              Meeting the highest standards for data security and regulatory compliance
+        <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-3 sm:space-y-4">
+            <div className="inline-flex items-center justify-center bg-white px-0 py-1 text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500">
+              security & compliance /
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight text-zinc-900">
+              Enterprise-grade by default
+            </h2>
+            <p className="max-w-xl text-sm sm:text-base lg:text-lg leading-relaxed text-zinc-600">
+              Your data stays yours. We never train on it without permission, and every system is built to meet the controls your security and legal teams already expect.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {certifications.map((cert) => (
-              <div
-                key={cert.name}
-                className="inline-flex items-center gap-2 bg-white rounded-full border border-zinc-200 px-4 sm:px-6 py-2 sm:py-3 hover:border-zinc-900 transition-colors"
-              >
-                <HiOutlineCheckBadge className="h-5 w-5 text-green-600" />
-                <span className="text-sm sm:text-base font-medium text-zinc-900">
-                  {cert.name}
-                </span>
-                <span className="text-xs text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full">
-                  {cert.tag}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+          <ul className="space-y-4 sm:space-y-5">
+            {features.map((feature) => {
+              const IconComponent = feature.icon;
+              return (
+                <li key={feature.title} className="flex items-start gap-3 sm:gap-4">
+                  <span className="mt-0.5 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-zinc-100 text-zinc-500 flex-shrink-0">
+                    <IconComponent className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </span>
+                  <span className="space-y-0.5 sm:space-y-1">
+                    <span className="block text-xs sm:text-sm font-semibold text-zinc-900">
+                      {feature.title}
+                    </span>
+                    <span className="block text-[11px] sm:text-xs lg:text-sm leading-relaxed text-zinc-500">
+                      {feature.description}
+                    </span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
 
-        {/* Security Statement */}
-        <div className="mt-12 sm:mt-16 bg-zinc-900 rounded-2xl lg:rounded-3xl p-6 sm:p-10 text-center text-white">
-          <HiOutlineLockClosed className="h-12 w-12 mx-auto mb-4 opacity-80" />
-          <h3 className="text-xl sm:text-2xl font-semibold mb-3">
-            Your Data, Your Rules
-          </h3>
-          <p className="text-sm sm:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-            We never train on your data without explicit permission. Your models and data remain completely private and under your control at all times.
-          </p>
+          <div className="rounded-[20px] sm:rounded-[32px] border border-zinc-200 bg-white px-5 py-5 sm:px-8 sm:py-6">
+            <p className="text-[11px] sm:text-[14px] font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-zinc-500 mb-4">
+              certifications /
+            </p>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {certifications.map((cert) => (
+                <span
+                  key={cert}
+                  className="inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-zinc-700"
+                >
+                  {cert}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
