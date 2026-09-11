@@ -55,10 +55,10 @@ export default function Hero() {
         <div className="relative z-10 px-5 pb-8 pt-24">
           <div className="space-y-5">
             <h1 className="text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-zinc-900">
-              We build custom software and scalable solutions.
+              AI that works by your rules
             </h1>
             <p className="text-sm sm:text-base leading-relaxed text-zinc-500 max-w-lg">
-              We build solutions that augment your teams, digitize your business processes, and bring your organization into the future.
+              Governed enterprise AI with custom models, guardrails, and compliance built in. Deploy AI solutions that align with your policies, industry regulations, and business objectives.
             </p>
           </div>
 
@@ -95,11 +95,10 @@ export default function Hero() {
         <div className="space-y-6 lg:space-y-8">
           <div className="space-y-4 lg:space-y-6">
             <h1 className="max-w-2xl text-3xl lg:text-[42px] font-semibold leading-tight tracking-tight text-zinc-900">
-              We build custom software and scalable solutions
+              AI that works by your rules
             </h1>
             <p className="max-w-xl text-base lg:text-lg leading-relaxed text-zinc-600">
-              We build solutions that augment your teams, digitize your business processes, and bring your organization into the future. 
-              Whether you need specialized talent or advanced AI-driven tools, we deliver results that matter—fast.
+              Governed enterprise AI with custom models, guardrails, and compliance built in. We deliver AI solutions that align with your policies, industry regulations, and business objectives—from pre-training to deployment and beyond.
             </p>
           </div>
 
@@ -159,7 +158,7 @@ export default function Hero() {
             >
               30
             </p>
-            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Clients Served</p>
+            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Enterprise Clients</p>
           </div>
           <div className="px-2 sm:px-4 lg:px-10 flex flex-col items-center justify-center">
             <p 
@@ -175,7 +174,7 @@ export default function Hero() {
             >
               50+
             </p>
-            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Projects</p>
+            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">AI Models Deployed</p>
           </div>
           <div className="px-2 sm:px-4 lg:pl-10 flex flex-col items-center justify-center">
             <p 
@@ -191,7 +190,7 @@ export default function Hero() {
             >
               100%
             </p>
-            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Clients Satisfaction</p>
+            <p className="text-[10px] sm:text-xs lg:text-sm text-zinc-500 mt-1">Compliance Rate</p>
           </div>
         </div>
       </div>
