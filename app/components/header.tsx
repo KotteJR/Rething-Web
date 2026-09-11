@@ -33,8 +33,8 @@ export default function Header() {
   const navItems = [
     { label: "Home /", id: "hero" },
     { label: "Services /", id: "services" },
-    { label: "Guardrails /", id: "guardrails" },
-    { label: "Compliance /", id: "compliance" },
+    { label: "Work /", id: "use-cases" },
+    { label: "Fit /", id: "environment" },
   ];
 
   return (
