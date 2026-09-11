@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rething",
-  description: "We build custom software and scalable solutions",
-};
+  description:
+    "AI that works by your rules. Governed enterprise AI with custom models, guardrails, and compliance built in.",
+}
 
 export default function RootLayout({
   children,
